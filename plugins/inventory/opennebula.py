@@ -147,7 +147,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable):
         return False
 
     def _get_vm_ipv6(self, vm):
-        nic = vm.TEMPLATE.get('NIC')
+        nic = vm.TEMPLATE.get('NIC', [])
 
         if isinstance(nic, dict):
             nic = [nic]
